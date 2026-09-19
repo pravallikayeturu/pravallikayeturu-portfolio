@@ -250,8 +250,7 @@ contactForm.addEventListener(
 
 
             responseMessage.textContent =
-                `Thank you, ${name}! Your message has been received.`;
-
+                `Thank you for contacting me! Your message has been received successfully. I’ll get back to you soon.`;
             responseMessage.style.color =
                 "#16a34a";
 
