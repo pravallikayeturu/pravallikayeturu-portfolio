@@ -1,77 +1,553 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-<title>Yeturu Pravallika | Java Full Stack Developer</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-<meta name="description"
-content="Portfolio of Yeturu Pravallika, Java Full Stack Developer specializing in Spring Boot, Java, MySQL, HTML, CSS and JavaScript.">
+    <title>
+        Yeturu Pravallika | Python Developer
+    </title>
 
-<link rel="stylesheet" href="style.css">
+
+    <meta name="description"
+          content="Portfolio of Yeturu Pravallika, Python Developer with knowledge of Machine Learning, NumPy, Pandas, Matplotlib, HTML, CSS and JavaScript.">
+
+
+    <link rel="stylesheet" href="index.css">
 
 </head>
 
+
 <body>
 
-<header>
 
-<nav class="navbar">
+    <!-- ================= BACKGROUND EFFECTS ================= -->
 
-<h2 class="logo">Portfolio</h2>
+    <div class="background">
 
-<ul>
+        <div class="glow glow-one"></div>
 
-<li><a href="about.html">About</a></li>
-<li><a href="skills.html">Skills</a></li>
-<li><a href="projects.html">Projects</a></li>
-<li><a href="certificates.html">Certificates</a></li>
-<li><a href="contact.html">Contact</a></li>
+        <div class="glow glow-two"></div>
 
-</ul>
+        <div id="particles"></div>
 
-</nav>
+    </div>
 
-</header>
 
-<section class="hero">
 
-<div class="glass-card">
+    <!-- ================= NAVBAR ================= -->
 
-<h3>Hello, I am</h3>
+    <header>
 
-<h1>Yeturu Pravallika</h1>
+        <nav class="navbar">
 
-<h2 id="typing"></h2>
 
-<p>
+            <!-- LOGO -->
 
-Passionate Java Full Stack Developer focused on building
-responsive web applications, and scalable software
-using Java, Spring Boot, MySQL, HTML, CSS, and JavaScript.
+            <a href="index.html"
+               class="logo">
 
-</p>
+                Portfolio
 
-<div class="hero-buttons">
+            </a>
 
-<a href="resume.pdf" target="_blank" class="resume-btn">
-View Resume
-</a>
 
-<a href="contact.html" class="contact-btn">
-Contact Me
-</a>
 
-</div>
+            <!-- MOBILE MENU -->
 
-</div>
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation">
 
-</section>
+                ☰
 
-<script src="script.js"></script>
+            </button>
+
+
+
+            <!-- NAVIGATION -->
+
+            <ul
+                class="nav-links"
+                id="navLinks">
+
+
+                <li>
+
+                    <a
+                        href="index.html"
+                        class="active">
+
+                        Home
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="about.html">
+
+                        About
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="skills.html">
+
+                        Skills
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="projects.html">
+
+                        Projects
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="certificates.html">
+
+                        Certificates
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="contact.html">
+
+                        Contact
+
+                    </a>
+
+                </li>
+
+
+            </ul>
+
+
+
+            <!-- THEME TOGGLE -->
+
+            <button
+                id="themeToggle"
+                class="theme-toggle"
+                aria-label="Toggle theme">
+
+                ☀
+
+            </button>
+
+
+        </nav>
+
+    </header>
+
+
+
+
+    <!-- ================= HERO ================= -->
+
+    <main>
+
+        <section class="hero">
+
+
+            <div
+                class="glass-card"
+                id="heroCard">
+
+
+                <!-- AVAILABILITY -->
+
+                <div class="availability">
+
+                    <span class="status-dot"></span>
+
+                    Open to Opportunities
+
+                </div>
+
+
+
+                <!-- GREETING -->
+
+                <p class="hello">
+
+                    Hello, I am
+
+                </p>
+
+
+
+                <!-- NAME -->
+
+                <h1>
+
+                    Yeturu Pravallika
+
+                </h1>
+
+
+
+                <!-- DYNAMIC ROLE -->
+
+                <h2>
+
+                    <span id="typing"></span>
+
+                    <span class="cursor">|</span>
+
+                </h2>
+
+
+
+                <!-- DESCRIPTION -->
+
+                <p class="hero-description">
+
+                    Passionate Python Developer with a strong interest
+                    in Machine Learning and Data Science, focused on
+                    building data-driven applications using Python,
+                    NumPy, Pandas, Matplotlib, and Machine Learning.
+
+                </p>
+
+
+
+
+                <!-- ================= BUTTONS ================= -->
+
+                <div class="hero-buttons">
+
+
+                    <!-- RESUME -->
+
+                    <a
+                        href="Pravallika_Yeturu_Resume.pdf"
+                        target="_blank"
+                        class="resume-btn">
+
+                        View Resume
+
+                    </a>
+
+
+
+                    <!-- CONTACT -->
+
+                    <a
+                        href="contact.html"
+                        class="contact-btn">
+
+                        Contact Me
+
+                    </a>
+
+
+                </div>
+
+
+
+
+                <!-- ================= SOCIAL LINKS ================= -->
+
+                <div class="social-links">
+
+
+                    <a
+                        href="https://github.com/pravallikayeturu"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub">
+
+                        GitHub
+
+                    </a>
+
+
+                    <span>•</span>
+
+
+                    <a
+                        href="https://www.linkedin.com/in/pravallika-yeturu-b11321325"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn">
+
+                        LinkedIn
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+
+        <!-- ================= STATS ================= -->
+
+        <section class="stats-section reveal">
+
+
+            <!-- PROJECTS -->
+
+            <div class="stat-card">
+
+                <div
+                    class="stat-number"
+                    data-target="3">
+
+                    0
+
+                </div>
+
+
+                <p>
+
+                    Projects
+
+                </p>
+
+            </div>
+
+
+
+
+            <!-- TECHNOLOGIES -->
+
+            <div class="stat-card">
+
+                <div
+                    class="stat-number"
+                    data-target="8">
+
+                    0
+
+                </div>
+
+
+                <p>
+
+                    Technologies
+
+                </p>
+
+            </div>
+
+
+
+
+            <!-- GRADUATION -->
+
+            <div class="stat-card">
+
+                <div
+                    class="stat-number"
+                    data-target="2027">
+
+                    0
+
+                </div>
+
+
+                <p>
+
+                    Graduation
+
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+
+
+        <!-- ================= QUICK INTRO ================= -->
+
+        <section class="quick-section reveal">
+
+
+
+            <!-- PYTHON -->
+
+            <div class="quick-card">
+
+
+                <span class="section-icon">
+
+                    🐍
+
+                </span>
+
+
+                <h2>
+
+                    Building with Python
+
+                </h2>
+
+
+                <p>
+
+                    Exploring Python programming and building
+                    data-driven applications using Python and
+                    Machine Learning.
+
+                </p>
+
+
+            </div>
+
+
+
+
+            <!-- MACHINE LEARNING -->
+
+            <div class="quick-card">
+
+
+                <span class="section-icon">
+
+                    🤖
+
+                </span>
+
+
+                <h2>
+
+                    Machine Learning
+
+                </h2>
+
+
+                <p>
+
+                    Learning Machine Learning concepts and
+                    working with datasets using NumPy,
+                    Pandas, and Python.
+
+                </p>
+
+
+            </div>
+
+
+
+
+            <!-- DATA ANALYSIS -->
+
+            <div class="quick-card">
+
+
+                <span class="section-icon">
+
+                    📊
+
+                </span>
+
+
+                <h2>
+
+                    Data Analysis & Visualization
+
+                </h2>
+
+
+                <p>
+
+                    Analyzing and visualizing data using
+                    Pandas, NumPy, Matplotlib, and other
+                    Python data tools.
+
+                </p>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+
+    <!-- ================= SCROLL TO TOP ================= -->
+
+    <button
+        id="scrollTop"
+        class="scroll-top"
+        aria-label="Scroll to top">
+
+        ↑
+
+    </button>
+
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+
+        <p>
+
+            © <span id="year"></span>
+            Yeturu Pravallika
+
+        </p>
+
+
+        <p>
+
+            Python Developer |
+            Machine Learning Enthusiast
+
+        </p>
+
+
+    </footer>
+
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="index.js"></script>
+
 
 </body>
 

@@ -1,154 +1,1169 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
+/* ================= GLOBAL ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
 }
 
-body{
-    background:linear-gradient(
-        135deg,
-        #102a43,
-        #243b55
-    );
-    color:#e6f1ff;
-    min-height:100vh;
-    padding:20px;
-    overflow-x:hidden;
-}
+:root {
+    --background: #0a192f;
+    --background-two: #112240;
 
+    --text: #ccd6f6;
+    --secondary-text: #8892b0;
 
-/* NAVBAR */
+    --accent: #64ffda;
 
-.navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 40px;
-}
+    --glass: rgba(255, 255, 255, 0.07);
 
-.logo{
-    font-size:42px;
-    font-weight:800;
-    letter-spacing:3px;
-    color:#64ffda;
-}
-
-.navbar a{
-    color:#e6f1ff;
-    text-decoration:none;
-    font-size:18px;
-}
-
-.navbar a:hover{
-    color:#64ffda;
+    --border: rgba(255, 255, 255, 0.15);
 }
 
 
-/* SECTION */
+/* ================= BODY ================= */
 
-.about-section{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:25px;
-    padding:60px 10%;
+body {
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--background),
+            var(--background-two)
+        );
+
+    color: var(--text);
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
 }
 
 
-/* CARD */
+/* ================= BACKGROUND ================= */
 
-.glass-card{
-    padding:35px;
-    border-radius:20px;
-    backdrop-filter:blur(12px);
-    transition:0.4s;
-    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+.background {
+
+    position: fixed;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: -1;
+
 }
 
 
-/* DIFFERENT COLORS */
+.glow {
 
-.about-card{
-    background:rgba(30,58,95,0.85);
-}
+    position: absolute;
 
-.career-card{
-    background:rgba(49,46,129,0.85);
-}
+    width: 350px;
 
-.education-card{
-    background:rgba(51,65,85,0.85);
-}
+    height: 350px;
 
-.strength-card{
-    background:rgba(37,99,235,0.75);
-}
+    border-radius: 50%;
 
-.learning-card{
-    background:rgba(13,148,136,0.75);
-}
+    background: var(--accent);
 
-.info-card{
-    background:rgba(8,145,178,0.75);
+    filter: blur(120px);
+
+    opacity: 0.12;
+
+    animation:
+        floatingGlow 9s infinite alternate ease-in-out;
+
 }
 
 
-/* TEXT */
+.glow-one {
 
-.glass-card h1,
-.glass-card h2{
-    margin-bottom:18px;
-    color:#64ffda;
-}
+    top: 5%;
 
-.glass-card p{
-    line-height:1.8;
-}
+    left: -120px;
 
-.glass-card ul{
-    padding-left:20px;
-    line-height:2;
 }
 
 
-/* HOVER */
+.glow-two {
 
-.glass-card:hover{
-    transform:translateY(-8px);
+    right: -120px;
+
+    bottom: 5%;
+
+    animation-delay: 3s;
+
 }
 
 
-/* MOBILE */
+@keyframes floatingGlow {
 
-@media(max-width:768px){
+    from {
 
-    .navbar{
-        flex-direction:column;
-        gap:15px;
-        text-align:center;
+        transform:
+            translate(0, 0);
+
     }
 
-    .about-section{
-        grid-template-columns:1fr;
-        padding:30px 5%;
-    }
+    to {
 
-    .logo{
-        font-size:30px;
+        transform:
+            translate(80px, -50px);
+
     }
 
 }
-.glass-card{
 
-    opacity:0;
-    transform:translateY(40px);
-    transition:all .8s ease;
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 20px 70px;
+
+    background:
+        rgba(10, 25, 47, 0.75);
+
+    backdrop-filter: blur(15px);
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.08);
 
 }
 
-.glass-card.show{
 
-    opacity:1;
-    transform:translateY(0);
+.logo {
+
+    color: var(--accent);
+
+    text-decoration: none;
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s;
+
+}
+
+
+.logo:hover {
+
+    transform: scale(1.05);
+
+}
+
+
+.nav-right {
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+
+.home-link {
+
+    color: var(--text);
+
+    text-decoration: none;
+
+    font-size: 17px;
+
+    transition: 0.3s;
+
+}
+
+
+.home-link:hover {
+
+    color: var(--accent);
+
+}
+
+
+/* ================= MAIN ================= */
+
+main {
+
+    width: 100%;
+
+}
+
+
+/* ================= ABOUT HERO ================= */
+
+.about-hero {
+
+    width: min(1150px, 90%);
+
+    min-height: 75vh;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1.5fr
+        0.8fr;
+
+    align-items: center;
+
+    gap: 70px;
+
+    padding: 80px 0;
+
+}
+
+
+.intro-content {
+
+    animation:
+        slideFromLeft 1s ease forwards;
+
+}
+
+
+@keyframes slideFromLeft {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateX(-50px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateX(0);
+
+    }
+
+}
+
+
+.intro-label {
+
+    display: inline-block;
+
+    color: var(--accent);
+
+    font-size: 14px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.intro-content h1 {
+
+    font-size:
+        clamp(42px, 6vw, 68px);
+
+    line-height: 1.1;
+
+    margin-bottom: 30px;
+
+}
+
+
+.intro-content h1 span {
+
+    display: block;
+
+    color: var(--accent);
+
+}
+
+
+.intro-content p {
+
+    max-width: 720px;
+
+    color: var(--secondary-text);
+
+    font-size: 18px;
+
+    line-height: 1.9;
+
+    margin-bottom: 18px;
+
+}
+
+
+.intro-content strong {
+
+    color: var(--accent);
+
+}
+
+
+/* ================= PROFILE CARD ================= */
+
+.profile-card {
+
+    padding: 45px 30px;
+
+    text-align: center;
+
+    background: var(--glass);
+
+    border: 1px solid var(--border);
+
+    border-radius: 25px;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 20px 60px
+        rgba(0, 0, 0, 0.25);
+
+    animation:
+        slideFromRight 1s ease forwards;
+
+    transition: 0.4s;
+
+}
+
+
+@keyframes slideFromRight {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateX(50px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateX(0);
+
+    }
+
+}
+
+
+.profile-card:hover {
+
+    transform:
+        translateY(-10px);
+
+    border-color: var(--accent);
+
+    box-shadow:
+        0 25px 60px
+        rgba(100, 255, 218, 0.12);
+
+}
+
+
+.profile-icon {
+
+    font-size: 65px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.profile-card h2 {
+
+    color: var(--accent);
+
+    font-size: 25px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.profile-card p {
+
+    color: var(--secondary-text);
+
+    line-height: 1.6;
+
+}
+
+
+.profile-line {
+
+    width: 60px;
+
+    height: 2px;
+
+    background: var(--accent);
+
+    margin: 25px auto;
+
+}
+
+
+.profile-status {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: var(--secondary-text);
+
+    font-size: 14px;
+
+}
+
+
+.profile-status span {
+
+    width: 9px;
+
+    height: 9px;
+
+    background: var(--accent);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 10px
+        var(--accent);
+
+    animation: pulse 1.5s infinite;
+
+}
+
+
+@keyframes pulse {
+
+    50% {
+
+        transform: scale(1.5);
+
+        opacity: 0.5;
+
+    }
+
+}
+
+
+/* ================= SECTION HEADING ================= */
+
+.section-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 35px;
+
+}
+
+
+.section-heading span {
+
+    color: var(--accent);
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+}
+
+
+.section-heading h2 {
+
+    font-size: 32px;
+
+}
+
+
+/* ================= JOURNEY ================= */
+
+.journey-section {
+
+    width: min(1100px, 90%);
+
+    margin: 20px auto 100px;
+
+}
+
+
+.journey-card {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+
+}
+
+
+.journey-item {
+
+    display: flex;
+
+    gap: 20px;
+
+    padding: 30px;
+
+    background: var(--glass);
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(12px);
+
+    transition: 0.4s;
+
+}
+
+
+.journey-item:hover {
+
+    transform:
+        translateY(-8px);
+
+    border-color: var(--accent);
+
+}
+
+
+.journey-number {
+
+    color: var(--accent);
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    min-width: 30px;
+
+}
+
+
+.journey-item h3 {
+
+    font-size: 21px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.journey-item p {
+
+    color: var(--secondary-text);
+
+    line-height: 1.7;
+
+}
+
+
+/* ================= TOOLS ================= */
+
+.tools-section {
+
+    width: min(1100px, 90%);
+
+    margin: 0 auto 100px;
+
+}
+
+
+.tools-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+}
+
+
+.tool-card {
+
+    padding: 30px;
+
+    text-align: center;
+
+    background: var(--glass);
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(12px);
+
+    transition: 0.4s;
+
+}
+
+
+.tool-card:hover {
+
+    transform:
+        translateY(-10px);
+
+    border-color: var(--accent);
+
+    box-shadow:
+        0 15px 35px
+        rgba(100, 255, 218, 0.08);
+
+}
+
+
+.tool-icon {
+
+    font-size: 40px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.tool-card h3 {
+
+    color: var(--accent);
+
+    font-size: 21px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.tool-card p {
+
+    color: var(--secondary-text);
+
+    font-size: 14px;
+
+}
+
+
+/* ================= EDUCATION ================= */
+
+.education-section {
+
+    width: min(1100px, 90%);
+
+    margin: 0 auto 100px;
+
+}
+
+
+.education-card {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 30px;
+
+    padding: 40px;
+
+    background: var(--glass);
+
+    border: 1px solid var(--border);
+
+    border-radius: 22px;
+
+    backdrop-filter: blur(12px);
+
+    transition: 0.4s;
+
+}
+
+
+.education-card:hover {
+
+    border-color: var(--accent);
+
+    transform:
+        translateY(-7px);
+
+}
+
+
+.education-icon {
+
+    font-size: 50px;
+
+}
+
+
+.education-year {
+
+    color: var(--accent);
+
+    font-size: 14px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.education-content h2 {
+
+    font-size: 28px;
+
+    margin: 10px 0;
+
+}
+
+
+.education-content h3 {
+
+    color: var(--accent);
+
+    font-size: 19px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.education-content p {
+
+    color: var(--secondary-text);
+
+    line-height: 1.8;
+
+}
+
+
+/* ================= CURRENT FOCUS ================= */
+
+.focus-section {
+
+    width: min(1100px, 90%);
+
+    margin: 0 auto 100px;
+
+}
+
+
+.focus-card {
+
+    display: grid;
+
+    grid-template-columns:
+        1.3fr
+        0.7fr;
+
+    gap: 40px;
+
+    padding: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(100, 255, 218, 0.08),
+            rgba(255, 255, 255, 0.05)
+        );
+
+    border: 1px solid var(--border);
+
+    border-radius: 25px;
+
+    backdrop-filter: blur(15px);
+
+}
+
+
+.focus-content > span {
+
+    color: var(--accent);
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.focus-content h2 {
+
+    font-size: 42px;
+
+    line-height: 1.2;
+
+    margin: 15px 0 20px;
+
+}
+
+
+.focus-content p {
+
+    color: var(--secondary-text);
+
+    line-height: 1.8;
+
+    font-size: 17px;
+
+}
+
+
+.focus-items {
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+
+}
+
+
+.focus-items div {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 18px 20px;
+
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    border-radius: 12px;
+
+    border: 1px solid var(--border);
+
+}
+
+
+.focus-items strong {
+
+    color: var(--accent);
+
+    font-size: 18px;
+
+}
+
+
+.focus-items span {
+
+    color: var(--secondary-text);
+
+    font-size: 14px;
+
+}
+
+
+/* ================= STATEMENT ================= */
+
+.statement-section {
+
+    width: min(900px, 90%);
+
+    margin: 0 auto 100px;
+
+}
+
+
+.statement-card {
+
+    text-align: center;
+
+    padding: 55px 45px;
+
+    background: var(--glass);
+
+    border: 1px solid var(--border);
+
+    border-radius: 25px;
+
+    backdrop-filter: blur(15px);
+
+}
+
+
+.quote-mark {
+
+    display: block;
+
+    color: var(--accent);
+
+    font-size: 70px;
+
+    line-height: 0.5;
+
+    margin-bottom: 25px;
+
+}
+
+
+.statement-card p {
+
+    font-size: 22px;
+
+    line-height: 1.8;
+
+    color: var(--text);
+
+}
+
+
+.statement-line {
+
+    width: 60px;
+
+    height: 2px;
+
+    background: var(--accent);
+
+    margin: 25px auto 15px;
+
+}
+
+
+.statement-name {
+
+    color: var(--accent);
+
+    font-size: 15px;
+
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+
+    text-align: center;
+
+    padding: 30px;
+
+    border-top:
+        1px solid var(--border);
+
+    color: var(--secondary-text);
+
+    line-height: 1.8;
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px) {
+
+
+    .navbar {
+
+        padding:
+            20px 30px;
+
+    }
+
+
+    .about-hero {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        padding:
+            60px 0;
+
+    }
+
+
+    .intro-content {
+
+        text-align: center;
+
+    }
+
+
+    .intro-content p {
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+    }
+
+
+    .journey-card {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .tools-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .focus-card {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 600px) {
+
+
+    .navbar {
+
+        padding:
+            18px 20px;
+
+    }
+
+
+    .logo {
+
+        font-size: 25px;
+
+    }
+
+
+    .home-link {
+
+        font-size: 15px;
+
+    }
+
+
+    .about-hero {
+
+        width: 90%;
+
+        padding:
+            45px 0;
+
+    }
+
+
+    .intro-content h1 {
+
+        font-size: 42px;
+
+    }
+
+
+    .intro-content p {
+
+        font-size: 16px;
+
+    }
+
+
+    .profile-card {
+
+        padding: 35px 25px;
+
+    }
+
+
+    .tools-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .journey-item {
+
+        padding: 25px;
+
+    }
+
+
+    .education-card {
+
+        flex-direction: column;
+
+        padding: 30px;
+
+    }
+
+
+    .focus-card {
+
+        padding: 30px;
+
+    }
+
+
+    .focus-content h2 {
+
+        font-size: 32px;
+
+    }
+
+
+    .statement-card {
+
+        padding:
+            40px 25px;
+
+    }
+
+
+    .statement-card p {
+
+        font-size: 18px;
+
+    }
 
 }
